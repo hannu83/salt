@@ -1,0 +1,4 @@
+base:
+  '*':
+    - ufw
+    - sshd

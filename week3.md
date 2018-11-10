@@ -53,39 +53,39 @@ Nyt varasto näkyy /srv/salt/ hakemistossa. Seuraavaksi siirsin tämän tiedosto
 
 Seuraavaksi annoin komennot, jolla sain synkronisoinnin tehtyä.
 
->   $ sudo git add .
->   $ sudo git commit
->   $ sudo git pull
->   $ sudo git push
+>       $ sudo git add .
+>       $ sudo git commit
+>       $ sudo git pull
+>       $ sudo git push
 
 Antaessasi komennon commit jätä ylimmälle riville yksi lause muutoksista. Tässä tapauksessa lisäsin "Added week3.md file". Ensimmäistä kertaa antaessasi push-komennon pitää samalla antaa tunnukset ja salasana github:iin.
 
 ## d) Näytä omalla salt-varastollasi esimerkit komennoista 'git log', 'git diff' ja 'git blame'. Selitä tulokset.
 
->   $ git log
+>       $ git log
 
 >  commit 240df20610695d59e204e6bbcf8c45015c1b00a6 (HEAD -> master, origin/master, origin/HEAD)
 >  Author: hannu83 <hannu.kankkunen1@gmail.com>
 >  Date:   Sat Nov 10 06:47:11 2018 +0000
-
+>
 >  Added week3.md file
-
+>
 >  commit c79ea73647bc2e2b812335467a6465f6bee115ac
 >  Author: hannu83 <hannu.kankkunen1@gmail.com>
 >  Date:   Thu Nov 8 13:46:41 2018 +0000
-
+>
 >  Added files
-
+>
 >  commit fd4f5d943b7b6301dc725a606c4d942c23b4a361
 >  Author: hannu83 <hannu.kankkunen1@gmail.com>
 >  Date:   Thu Nov 8 13:45:27 2018 +0000
-
+>
 >  Added multiple files
-
+>
 >  commit bac98f607c20f3ab053a92a51ec1a6c0ab705090
 >  Author: hannu83 <hannu.kankkunen1@gmail.com>
 >  Date:   Thu Nov 8 13:43:12 2018 +0000
-
+>
 >  Added files
 
 Tässä neljä viimeisintä muutosta lokista.
@@ -101,21 +101,24 @@ commit: hash-avain muutokselle
 
 Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje osoitteesta [GIT tutorial](https://veerasundar.com/blog/2011/06/git-tutorial-comparing-files-with-diff/)
 
->  $ git diff week3.md
+>      $ git diff week3.md
 
->  diff --git a/week3.md b/week3.md
->  index 07c4501..c73a22c 100644
->  --- a/week3.md
->  +++ b/week3.md
->  @@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
+>      diff --git a/week3.md b/week3.md
+>      index 07c4501..c73a22c 100644
+>      --- a/week3.md
+>      +++ b/week3.md
+>      @@ -96,4 +96,10 @@ 
+>      Date: päivämäärä ja aika jolloin muutokset on tehty.
 >
->  commit: hash-avain muutokselle
+>      commit: hash-avain muutokselle
 >
->  +## git diff
->  +
->  +Git diff näyttää muutokset halutusta tiedostosta.
->  +
->  +>  $ git diff week3.md
+>      +## git diff
+>      +
+>      +Git diff näyttää muutokset halutusta tiedostosta.
+>      +
+>      +
+
+>  $ git diff week3.md
 
 Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyjä muutoksia edellisen 'commit' komennon jälkeen tallennettuun versioon.
 

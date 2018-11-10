@@ -207,13 +207,13 @@ Seuraavaksi loin fail2ban.sls tiedoston.
 >          - file: /etc/fail2ban/jail.local
 
 Ja lisäsin fail2ban top.sls.
+´´´
+base:
 
->  base:
+  '*':
 
->    '*':
-
->      - fail2ban
-
+    - fail2ban
+´´´
 Ja lopuksi poistin koko fail2banin minionilta.
 
 >   $ sudo apt-get purge fail2ban

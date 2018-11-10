@@ -211,7 +211,8 @@ Ja lopuksi poistin koko fail2banin minionilta.
 Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 
 >  $ sudo salt '*' state.apply fail2ban
->  acer5536:
+>  
+>   acer5536:
 >  ----------
 >            ID: fail2ban
 >      Function: pkg.installed

@@ -96,4 +96,39 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
 
 commit: hash-avain muutokselle
 
+### git diff
+
+Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje osoitteesta [GIT tutorial](https://veerasundar.com/blog/2011/06/git-tutorial-comparing-files-with-diff/)
+
+>  $ git diff week3.md
+
+diff --git a/week3.md b/week3.md
+index 07c4501..c73a22c 100644
+--- a/week3.md
++++ b/week3.md
+@@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
+
+ commit: hash-avain muutokselle
+
++## git diff
++
++Git diff näyttää muutokset halutusta tiedostosta.
++
++>  $ git diff week3.md
+
+Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyjä muutoksia edellisen 'commit' komennon jälkeen tallennettuun versioon.
+
+### git blame
+
+Git blame on komento, jolla voidaan tutkia tiedostojen sisältöä rivi riviltä. Tämän avulla voidaan nähdä ketä on viimeiseksi käynyt muokkaamassa tiedostoa. Tutkin tiedostoa week3.md esimerkissä. Esimerkissä käytin '-L 1,3' jolloin blame komento tutki tiedoston kolmea ensimmäistä riviä. Tähän löytyi apua linkistä [Atlassian Bitbucket Git blame] (https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
+
+>  $ git blame -L 1,3 week3.md
+
+240df206 (hannu83 2018-11-10 06:47:11 +0000 1) # Palvelinten hallinta h3
+240df206 (hannu83 2018-11-10 06:47:11 +0000 2)
+240df206 (hannu83 2018-11-10 06:47:11 +0000 3) * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
+
+Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi niille uusi hash, aika, päivämäärä sekä käyttäjän nimi jäisi näkyviin 'hannu83' tilalle.
+
+## e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset 'git-reset hard'.
 

@@ -64,29 +64,37 @@ Antaessasi komennon commit jätä ylimmälle riville yksi lause muutoksista. Tä
 
 >       $ git log
 
->  commit 240df20610695d59e204e6bbcf8c45015c1b00a6 (HEAD -> master, origin/master, origin/HEAD)
->  Author: hannu83 <hannu.kankkunen1@gmail.com>
->  Date:   Sat Nov 10 06:47:11 2018 +0000
+>      commit 240df20610695d59e204e6bbcf8c45015c1b00a6 (HEAD -> master, origin/master, origin/HEAD)
 >
->  Added week3.md file
+>      Author: hannu83 <hannu.kankkunen1@gmail.com>
 >
->  commit c79ea73647bc2e2b812335467a6465f6bee115ac
->  Author: hannu83 <hannu.kankkunen1@gmail.com>
->  Date:   Thu Nov 8 13:46:41 2018 +0000
+>      Date:   Sat Nov 10 06:47:11 2018 +0000
 >
->  Added files
+>      Added week3.md file
 >
->  commit fd4f5d943b7b6301dc725a606c4d942c23b4a361
->  Author: hannu83 <hannu.kankkunen1@gmail.com>
->  Date:   Thu Nov 8 13:45:27 2018 +0000
+>      commit c79ea73647bc2e2b812335467a6465f6bee115ac
 >
->  Added multiple files
+>      Author: hannu83 <hannu.kankkunen1@gmail.com>
 >
->  commit bac98f607c20f3ab053a92a51ec1a6c0ab705090
->  Author: hannu83 <hannu.kankkunen1@gmail.com>
->  Date:   Thu Nov 8 13:43:12 2018 +0000
+>      Date:   Thu Nov 8 13:46:41 2018 +0000
 >
->  Added files
+>      Added files
+>
+>      commit fd4f5d943b7b6301dc725a606c4d942c23b4a361
+>
+>      Author: hannu83 <hannu.kankkunen1@gmail.com>
+>
+>      Date:   Thu Nov 8 13:45:27 2018 +0000
+>
+>      Added multiple files
+>
+>      commit bac98f607c20f3ab053a92a51ec1a6c0ab705090
+>
+>      Author: hannu83 <hannu.kankkunen1@gmail.com>
+>
+>      Date:   Thu Nov 8 13:43:12 2018 +0000
+>
+>      Added files
 
 Tässä neljä viimeisintä muutosta lokista.
 

@@ -107,8 +107,7 @@ Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje 
 >      index 07c4501..c73a22c 100644
 >      --- a/week3.md
 >      +++ b/week3.md
->      @@ -96,4 +96,10 @@ 
->      Date: päivämäärä ja aika jolloin muutokset on tehty.
+>      @@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
 >
 >      commit: hash-avain muutokselle
 >
@@ -118,7 +117,7 @@ Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje 
 >      +
 >      +
 
->  $ git diff week3.md
+>      $ git diff week3.md
 
 Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyjä muutoksia edellisen 'commit' komennon jälkeen tallennettuun versioon.
 
@@ -126,11 +125,11 @@ Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyj
 
 Git blame on komento, jolla voidaan tutkia tiedostojen sisältöä rivi riviltä. Tämän avulla voidaan nähdä ketä on viimeiseksi käynyt muokkaamassa tiedostoa. Tutkin tiedostoa week3.md esimerkissä. Esimerkissä käytin '-L 1,3' jolloin blame komento tutki tiedoston kolmea ensimmäistä riviä. Tähän löytyi apua linkistä [Git blame Bitbucket](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
 
->  $ git blame -L 1,3 week3.md
+>      $ git blame -L 1,3 week3.md
 >  
->  240df206 (hannu83 2018-11-10 06:47:11 +0000 1) # Palvelinten hallinta h3
->  240df206 (hannu83 2018-11-10 06:47:11 +0000 2)
->  240df206 (hannu83 2018-11-10 06:47:11 +0000 3) * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
+>      240df206 (hannu83 2018-11-10 06:47:11 +0000 1) # Palvelinten hallinta h3
+>      240df206 (hannu83 2018-11-10 06:47:11 +0000 2)
+>      240df206 (hannu83 2018-11-10 06:47:11 +0000 3) * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
 
 Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi niille uusi hash, aika, päivämäärä sekä käyttäjän nimi jäisi näkyviin 'hannu83' tilalle.
 
@@ -138,13 +137,13 @@ Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi n
 
 Git reset --hard komento tuhoaa kaikki muutokset kansiosta, jossa työskennellään viimeisimpään tilaan 'commit' komennon jälkeen. Tein muutoksia 'week3.md' tiedostoon ja tallensin sen. Tämän jälkeen tein hard reset:in ja tiedoston tila palasi normaaliksi. Hyviä ohjeita resetointiin [Git Reset Bitbucket](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset).
 
->  $ git blame week3.md
+>      $ git blame week3.md
 
->  00000000 (Not Committed Yet 2018-11-10 12:23:02 +0000   1) 9230842039842304823048fhjnaiskdfha9if8yas89fahsf# Palvelinten hallinta h3
+>      00000000 (Not Committed Yet 2018-11-10 12:23:02 +0000   1) 9230842039842304823048fhjnaiskdfha9if8yas89fahsf# Palvelinten hallinta h3
 
 Tuossa näkyi viimeisin muutos tekstiin. Tästä seuraavaksi resetointi.
 
->  $ sudo git reset --hard
+>      $ sudo git reset --hard
 
 Ja tiedostot palasivat ennalleen eikä muutoksia näkynyt.
 
@@ -154,22 +153,22 @@ fail2ban on ohjelma, joka auttaa suojaamaan palvelinta yhdestä ip-osoitteesta t
 
 Asennus
 
->  $ sudo apt-get update
+>      $ sudo apt-get update
 
->  $ sudo apt-get -y install fail2ban
+>      $ sudo apt-get -y install fail2ban
 
 Tämän jälkeen otetaan kopiodaan jail.conf tiedostoksi jail.local. Jail.conf sisältää kaikki asetukset mutta sen päälle saatetaan kirjoittaa päivitysten yhteydessä. Fail2ban lukee jail.local tiedostosta asetukset paikallisesti. Tähän avuksi löytyi [How to harden a server with fail2ban](https://www.a2hosting.com/kb/security/hardening-a-server-with-fail2ban).
 
->  $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+>      $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
 Tein ainoastaan yhden muutokset, eli bannattava ip-osoite on 60 minuuttia bannattuna 10 minuutin sijasta. Tämä asetus löyty kohdasta [DEFAULT].
 
->  [DEFAULT]
->  bantime = 60m
+>      [DEFAULT]
+>      bantime = 60m
 
 Tämän jälkeen pitää fail2ban käynnistää uudelleen, jotta asetukset tulevat voimaan.
 
->  $ sudo systemctl restart fail2ban
+>      $ sudo systemctl restart fail2ban
 
 Yleisimmät fail2ban komennot [fail2ban commands](https://www.fail2ban.org/wiki/index.php/Commands)
 
@@ -179,11 +178,11 @@ Käytän pohjana tähän apachen asentamista saltin avulla, jonka tein edellises
 
 Aloitin tekemällä hakemiston fail2ban asetus tiedostolle.
 
-> $ sudo mkdir /srv/salt/fail2ban/
+>     $ sudo mkdir /srv/salt/fail2ban/
 
 Ja kopioin sinne muokatun tiedoston.
 
-> $ sudo cp /etc/fail2ban/jail.local /srv/salt/fail2ban/
+>     $ sudo cp /etc/fail2ban/jail.local /srv/salt/fail2ban/
 
 Seuraavaksi loin fail2ban.sls tiedoston.
 

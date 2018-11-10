@@ -201,21 +201,21 @@ Seuraavaksi loin fail2ban.sls tiedoston.
 
 Ja lisäsin fail2ban top.sls.
 
->base:
+>    base:
 >
->  '*':
+>      '*':
 >
->    - fail2ban
+>        - fail2ban
 
 Ja lopuksi poistin koko fail2banin minionilta.
 
->   $ sudo apt-get purge fail2ban
+>       $ sudo apt-get purge fail2ban
 
->   $ rm -r /etc/fail2ban
+>       $ rm -r /etc/fail2ban
 
 Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 
->  $ sudo salt '*' state.apply fail2ban
+>      $ sudo salt '*' state.apply fail2ban
 >  
 >  acer5536:
 >  ----------

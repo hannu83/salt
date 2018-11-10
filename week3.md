@@ -102,19 +102,19 @@ Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje 
 
 >  $ git diff week3.md
 
-diff --git a/week3.md b/week3.md
-index 07c4501..c73a22c 100644
---- a/week3.md
-+++ b/week3.md
-@@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
-
- commit: hash-avain muutokselle
-
-+## git diff
-+
-+Git diff näyttää muutokset halutusta tiedostosta.
-+
-+>  $ git diff week3.md
+>  diff --git a/week3.md b/week3.md
+>  index 07c4501..c73a22c 100644
+>  --- a/week3.md
+>  +++ b/week3.md
+>  @@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
+>
+> commit: hash-avain muutokselle
+>
+> +## git diff
+> +
+> +Git diff näyttää muutokset halutusta tiedostosta.
+> +
+> +>  $ git diff week3.md
 
 Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyjä muutoksia edellisen 'commit' komennon jälkeen tallennettuun versioon.
 

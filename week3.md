@@ -207,8 +207,9 @@ Ja lisäsin fail2ban top.sls.
 
 Ja lopuksi poistin koko fail2banin minionilta.
 
-> $ sudo apt-get purge fail2ban
-> $ rm -r /etc/fail2ban
+>   $ sudo apt-get purge fail2ban
+
+>   $ rm -r /etc/fail2ban
 
 Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 

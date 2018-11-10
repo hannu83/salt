@@ -8,13 +8,14 @@
 * e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset –hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
 * f) Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’ löytääksesi uudet asetustiedostot.
 
-Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni, joka on vuokrattu Digital Oceanin kautta.
+Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, Asus Z97 Pro Wifi-ac emolevy, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni, joka on vuokrattu Digital Oceanin kautta.
 
 ## b) Tämä tehtävä tehdään markdown muodossa ja tieto tallennettiin /srv/salt/ hakemistoon ja sieltä github varastoon.
 
 ## c) /srv/salt/ gittiin.
 
 /srv/salt/ on jo gitissä, joten aloitin poistamalla sen koneelta ja lataamalla sen uudelleen. Ensin kuitenkin otin varmuuskopion toiseen hakemistoon koko salt-kansiosta.
+
 >  $ sudo cp -r /srv/salt/ /home/hannu/salt/
 
 Ja poistin alkuperäisen saltin
@@ -44,7 +45,7 @@ Varaston kloonaaminen onnistuu yhdellä komennolla, joka on annettava tässä ta
 
 >  $ sudo git clone https://github.com/hannu83/salt.git
 
-Nyt varasto näkyy /srv/salt hakemistossa. Seuraavaksi siirsin tämän tiedoston kyseiseen hakemistoon ja lisäsin sen github:iin.
+Nyt varasto näkyy /srv/salt/ hakemistossa. Seuraavaksi siirsin tämän tiedoston kyseiseen hakemistoon ja lisäsin sen github:iin.
 
 >   $ sudo cp /home/hannu/salt/week3.md /srv/salt/
 
@@ -132,7 +133,7 @@ Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi n
 
 ## e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset 'git-reset hard'.
 
-Git reset --hard komento tuhoaa kaikki muutokset kansiosta, jossa työskennellään viimeisimpään tilaan 'commit' komennon jälkeen. Tein muutoksia 'week3.md' tiedostoon ja tallensin sen. Tämän jälkeen tein hard reset:in ja tiedoston tila palasi normaaliksi [Git Reset Bitbucket](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset).
+Git reset --hard komento tuhoaa kaikki muutokset kansiosta, jossa työskennellään viimeisimpään tilaan 'commit' komennon jälkeen. Tein muutoksia 'week3.md' tiedostoon ja tallensin sen. Tämän jälkeen tein hard reset:in ja tiedoston tila palasi normaaliksi. Hyviä ohjeita resetointiin [Git Reset Bitbucket](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset).
 
 >  $ git blame week3.md
 
@@ -151,13 +152,14 @@ fail2ban on ohjelma, joka auttaa suojaamaan palvelinta yhdestä ip-osoitteesta t
 Asennus
 
 >  $ sudo apt-get update
+
 >  $ sudo apt-get -y install fail2ban
 
 Tämän jälkeen otetaan kopiodaan jail.conf tiedostoksi jail.local. Jail.conf sisältää kaikki asetukset mutta sen päälle saatetaan kirjoittaa päivitysten yhteydessä. Fail2ban lukee jail.local tiedostosta asetukset paikallisesti. Tähän avuksi löytyi [How to harden a server with fail2ban](https://www.a2hosting.com/kb/security/hardening-a-server-with-fail2ban).
 
 >  $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
-Tein ainoastaan yhden muutokset, eli bannattava ip-osoite on 60 minuuttia bannattuna 10 minuutin sijasta. Tämä asetus löyty kohdasta
+Tein ainoastaan yhden muutokset, eli bannattava ip-osoite on 60 minuuttia bannattuna 10 minuutin sijasta. Tämä asetus löyty kohdasta [DEFAULT].
 
 >  [DEFAULT]
 >  bantime = 60m
@@ -168,3 +170,88 @@ Tämän jälkeen pitää fail2ban käynnistää uudelleen, jotta asetukset tulev
 
 Yleisimmät fail2ban komennot [fail2ban commands](https://www.fail2ban.org/wiki/index.php/Commands)
 
+## fail2ban automatisointi salt:in avulla
+
+Aloitin tekemällä hakemiston fail2ban asetus tiedostolle.
+
+> $ sudo mkdir /srv/salt/fail2ban/
+
+Ja kopioin sinne muokatun tiedoston.
+
+> $ sudo cp /etc/fail2ban/jail.local /srv/salt/fail2ban/
+
+Seuraavaksi loin fail2ban.sls tiedoston.
+
+>  $ sudoedit /srv/salt/fail2ban.sls
+
+fail2ban:
+  pkg.installed
+
+/etc/fail2ban/jail.local:
+  file.managed:
+    - source: salt://fail2ban/jail.local
+
+fail2banservice:
+  service.running:
+    - name: fail2ban
+    - watch:
+      - file: /etc/fail2ban/jail.local
+
+Ja lisäsin fail2ban top.sls.
+
+> base:
+>   '*':
+>     - fail2ban
+
+Ja lopuksi poistin koko fail2banin minionilta.
+
+> $ sudo apt-get purge fail2ban
+> $ rm -r /etc/fail2ban
+
+Ja nyt ajoin uudelleen salt-masterilta fail2ban.
+
+>  $ sudo salt '*' state.apply fail2ban
+>  acer5536:
+>  ----------
+>            ID: fail2ban
+>      Function: pkg.installed
+>        Result: True
+>       Comment: The following packages were installed/updated: fail2ban
+>       Started: 16:13:37.901261
+>      Duration: 14784.45 ms
+>       Changes:
+>                ----------
+>                fail2ban:
+>                    ----------
+>                    new:
+>                        0.10.2-2
+>                    old:
+>  ----------
+>            ID: /etc/fail2ban/jail.local
+>      Function: file.managed
+>        Result: True
+>       Comment: File /etc/fail2ban/jail.local updated
+>       Started: 16:13:52.695659
+>      Duration: 283.171 ms
+>       Changes:
+>                ----------
+>                diff:
+>                    New file
+>                mode:
+>                    0644
+>  ----------
+>            ID: fail2banservice
+>      Function: service.running
+>          Name: fail2ban
+>        Result: True
+>       Comment: Service restarted
+>       Started: 16:13:55.487300
+>      Duration: 568.919 ms
+>       Changes:
+>                ----------
+>                fail2ban:
+>                    True
+>  
+>  Summary for acer5536
+
+Fail2ban asentui ja käynnisti itsensä uudelleen, jotta asetukset otetaan jail.local tiedostosta.

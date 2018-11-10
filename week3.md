@@ -29,6 +29,7 @@ Nyt /srv/ hakemisto on tyhjä, joten sinne oli saatava palautettua tiedot. Mikä
 Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi tunnistaa käyttäjän.
 
 >  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
+
 >  $ git config --global user.name "Hannu Harjoittelija"
 
 Näihin kannattaa antaa oikea nimi, sillä se tulee näkymään kommenteissa, joita jätät.

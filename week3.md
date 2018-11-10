@@ -212,7 +212,7 @@ Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 
 >  $ sudo salt '*' state.apply fail2ban
 >  
->   acer5536:
+>  acer5536:
 >  ----------
 >            ID: fail2ban
 >      Function: pkg.installed
@@ -255,4 +255,4 @@ Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 >  
 >  Summary for acer5536
 
-Fail2ban asentui ja käynnisti itsensä uudelleen, jotta asetukset otetaan jail.local tiedostosta.
+Fail2ban asentui ja käynnisti itsensä uudelleen, jotta asetukset otetaan jail.local tiedostosta. Homma kunnossa!

@@ -134,3 +134,12 @@ Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi n
 
 Git reset --hard komento tuhoaa kaikki muutokset kansiosta, jossa työskennellään viimeisimpään tilaan 'commit' komennon jälkeen. Tein muutoksia 'week3.md' tiedostoon ja tallensin sen. Tämän jälkeen tein hard reset:in ja tiedoston tila palasi normaaliksi [Git Reset Bitbucket](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset).
 
+>  $ git blame week3.md
+
+>  00000000 (Not Committed Yet 2018-11-10 12:23:02 +0000   1) 9230842039842304823048fhjnaiskdfha9if8yas89fahsf# Palvelinten hallinta h3
+
+Tuossa näkyi viimeisin muutos tekstiin. Tästä seuraavaksi resetointi.
+
+>  $ sudo git reset --hard
+
+Ja tiedostot palasivat ennalleen eikä muutoksia näkynyt.

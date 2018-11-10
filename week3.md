@@ -146,4 +146,25 @@ Ja tiedostot palasivat ennalleen eikä muutoksia näkynyt.
 
 ## f) Tee uusi salt-moduli
 
+fail2ban on ohjelma, joka auttaa suojaamaan palvelinta yhdestä ip-osoitteesta tulevia brute force hyökkäyksiä vastaan.
+
+Asennus
+
+>  $ sudo apt-get update
+>  $ sudo apt-get -y install fail2ban
+
+Tämän jälkeen otetaan kopiodaan jail.conf tiedostoksi jail.local. Jail.conf sisältää kaikki asetukset mutta sen päälle saatetaan kirjoittaa päivitysten yhteydessä. Fail2ban lukee jail.local tiedostosta asetukset paikallisesti. Tähän avuksi löytyi [How to harden a server with fail2ban](https://www.a2hosting.com/kb/security/hardening-a-server-with-fail2ban).
+
+>  $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+
+Tein ainoastaan yhden muutokset, eli bannattava ip-osoite on 60 minuuttia bannattuna 10 minuutin sijasta. Tämä asetus löyty kohdasta
+
+>  [DEFAULT]
+>  bantime = 60m
+
+Tämän jälkeen pitää fail2ban käynnistää uudelleen, jotta asetukset tulevat voimaan.
+
+>  $ sudo systemctl restart fail2ban
+
+Yleisimmät fail2ban komennot [fail2ban commands](https://www.fail2ban.org/wiki/index.php/Commands)
 

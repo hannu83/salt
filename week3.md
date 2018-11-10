@@ -172,7 +172,9 @@ Yleisimmät fail2ban komennot [fail2ban commands](https://www.fail2ban.org/wiki/
 
 ## fail2ban automatisointi salt:in avulla
 
-Käytän pohjana tähän apachen asentamista saltin avulla, jonka tein edellisessä tehtävässä Karvisen Teron ohjeiden mukaan [Apache User Homepages Automatically](http://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example). Aloitin tekemällä hakemiston fail2ban asetus tiedostolle.
+Käytän pohjana tähän apachen asentamista saltin avulla, jonka tein edellisessä tehtävässä Karvisen Teron ohjeiden mukaan [Apache User Homepages Automatically](http://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example).
+
+Aloitin tekemällä hakemiston fail2ban asetus tiedostolle.
 
 > $ sudo mkdir /srv/salt/fail2ban/
 

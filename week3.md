@@ -184,35 +184,35 @@ Ja kopioin sinne muokatun tiedoston.
 
 Seuraavaksi loin fail2ban.sls tiedoston.
 
->    $ sudoedit /srv/salt/fail2ban.sls 
+>    $ sudoedit /srv/salt/fail2ban.sls
     
->    fail2ban: 
+>    fail2ban:
 
->      pkg.installed 
+>      pkg.installed
 
->    /etc/fail2ban/jail.local: 
+>    /etc/fail2ban/jail.local:
 
->      file.managed: 
+>      file.managed:
 
->        - source: salt://fail2ban/jail.local 
+>        - source: salt://fail2ban/jail.local
 
->    fail2banservice: 
+>    fail2banservice:
 
->      service.running: 
+>      service.running:
 
->        - name: fail2ban 
+>        - name: fail2ban
 
->        - watch: 
+>        - watch:
 
->          - file: /etc/fail2ban/jail.local 
+>          - file: /etc/fail2ban/jail.local
 
 Ja lisäsin fail2ban top.sls.
 
-> base:
+>  base:
 
->   '*':
+>    '*':
 
->     - fail2ban
+>      - fail2ban
 
 Ja lopuksi poistin koko fail2banin minionilta.
 

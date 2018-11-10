@@ -23,44 +23,44 @@ Ja poistin alkuperäisen saltin
  
 Nyt /srv/ hakemisto on tyhjä, joten sinne oli saatava palautettua tiedot. Mikäli GIT ei olisi asennettuna voisi sen asentaa:
 
-  $ sudo apt-get update
-  $ sudo apt-get -y install git
+>  $ sudo apt-get update
+>  $ sudo apt-get -y install git
 
 Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi tunnistaa käyttäjän.
 
-  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
-  $ git config --global user.name "Hannu Harjoittelija"
+>  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
+>  $ git config --global user.name "Hannu Harjoittelija"
 
 Näihin kannattaa antaa oikea nimi, sillä se tulee näkymään kommenteissa, joita jätät.
 
 Seuraavaksi annoin komennon, joka muistaa ulkoa salasanan tunnin ajan, jottei sitä tarvitse jatkuvasti kirjoittaa.
 
-  $ git config --global credential.helper "cache --timeout=3600"
+>  $ git config --global credential.helper "cache --timeout=3600"
 
 ### Varaston kloonaaminen virtuaalipalvelimelle.
 
 Varaston kloonaaminen onnistuu yhdellä komennolla, joka on annettava tässä tapauksessa /srv/ hakemistossa.
 
-  $ sudo git clone https://github.com/hannu83/salt.git
+>  $ sudo git clone https://github.com/hannu83/salt.git
 
 Nyt varasto näkyy /srv/salt hakemistossa. Seuraavaksi siirsin tämän tiedoston kyseiseen hakemistoon ja lisäsin sen github:iin.
 
- $ sudo cp /home/hannu/salt/week3.md /srv/salt/
+>   $ sudo cp /home/hannu/salt/week3.md /srv/salt/
 
 ### Gitin synkronisointi
 
 Seuraavaksi annoin komennot, jolla sain synkronisoinnin tehtyä.
 
- $ sudo git add .
- $ sudo git commit
- $ sudo git pull
- $ sudo git push
+>   $ sudo git add .
+>   $ sudo git commit
+>   $ sudo git pull
+>   $ sudo git push
 
 Antaessasi komennon commit jätä ylimmälle riville yksi lause muutoksista. Tässä tapauksessa lisäsin "Added week3.md file". Ensimmäistä kertaa antaessasi push-komennon pitää samalla antaa tunnukset ja salasana github:iin.
 
 ## d) Näytä omalla salt-varastollasi esimerkit komennoista 'git log', 'git diff' ja 'git blame'. Selitä tulokset.
 
- $ git log
+>   $ git log
 
 commit 240df20610695d59e204e6bbcf8c45015c1b00a6 (HEAD -> master, origin/master, origin/HEAD)
 Author: hannu83 <hannu.kankkunen1@gmail.com>

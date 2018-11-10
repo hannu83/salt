@@ -15,11 +15,11 @@ Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel 
 ## c) /srv/salt/ gittiin.
 
 /srv/salt/ on jo gitissä, joten aloitin poistamalla sen koneelta ja lataamalla sen uudelleen. Ensin kuitenkin otin varmuuskopion toiseen hakemistoon koko salt-kansiosta.
-> $ sudo cp -r /srv/salt/ /home/hannu/salt/
+>  $ sudo cp -r /srv/salt/ /home/hannu/salt/
 
 Ja poistin alkuperäisen saltin
 
-> $ sudo rm -r /srv/salt/
+>  $ sudo rm -r /srv/salt/
  
 Nyt /srv/ hakemisto on tyhjä, joten sinne oli saatava palautettua tiedot. Mikäli GIT ei olisi asennettuna voisi sen asentaa:
 
@@ -108,13 +108,13 @@ Git diff näyttää muutokset halutusta tiedostosta. Tähän löytyi hyvä ohje 
 >  +++ b/week3.md
 >  @@ -96,4 +96,10 @@ Date: päivämäärä ja aika jolloin muutokset on tehty.
 >
-> commit: hash-avain muutokselle
+>  commit: hash-avain muutokselle
 >
-> +## git diff
-> +
-> +Git diff näyttää muutokset halutusta tiedostosta.
-> +
-> +>  $ git diff week3.md
+>  +## git diff
+>  +
+>  +Git diff näyttää muutokset halutusta tiedostosta.
+>  +
+>  +>  $ git diff week3.md
 
 Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyjä muutoksia edellisen 'commit' komennon jälkeen tallennettuun versioon.
 
@@ -123,10 +123,10 @@ Gitissä diff-komennossa 'head' viittaa paikalliseen tiedostoon ja vertaa tehtyj
 Git blame on komento, jolla voidaan tutkia tiedostojen sisältöä rivi riviltä. Tämän avulla voidaan nähdä ketä on viimeiseksi käynyt muokkaamassa tiedostoa. Tutkin tiedostoa week3.md esimerkissä. Esimerkissä käytin '-L 1,3' jolloin blame komento tutki tiedoston kolmea ensimmäistä riviä. Tähän löytyi apua linkistä [Git blame Bitbucket](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
 
 >  $ git blame -L 1,3 week3.md
-
-240df206 (hannu83 2018-11-10 06:47:11 +0000 1) # Palvelinten hallinta h3
-240df206 (hannu83 2018-11-10 06:47:11 +0000 2)
-240df206 (hannu83 2018-11-10 06:47:11 +0000 3) * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
+>  
+>  240df206 (hannu83 2018-11-10 06:47:11 +0000 1) # Palvelinten hallinta h3
+>  240df206 (hannu83 2018-11-10 06:47:11 +0000 2)
+>  240df206 (hannu83 2018-11-10 06:47:11 +0000 3) * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
 
 Mikäli joku muu kävisi muokkaamassa tiedoston kyseisiä rivejä, muodostuisi niille uusi hash, aika, päivämäärä sekä käyttäjän nimi jäisi näkyviin 'hannu83' tilalle.
 
@@ -143,3 +143,7 @@ Tuossa näkyi viimeisin muutos tekstiin. Tästä seuraavaksi resetointi.
 >  $ sudo git reset --hard
 
 Ja tiedostot palasivat ennalleen eikä muutoksia näkynyt.
+
+## f) Tee uusi salt-moduli
+
+

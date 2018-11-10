@@ -91,9 +91,7 @@ Antaessasi komennon commit jätä ylimmälle riville yksi lause muutoksista. Tä
 >      commit bac98f607c20f3ab053a92a51ec1a6c0ab705090
 >
 >      Author: hannu83 <hannu.kankkunen1@gmail.com>
->
 >      Date:   Thu Nov 8 13:43:12 2018 +0000
->
 >      Added files
 
 Tässä neljä viimeisintä muutosta lokista.

@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright 2018 Tero Karvinen http://TeroKarvinen.com GPL 3
+# Modified by Hannu Kankkunen 2018
 
 echo "Live USB configuration Starting... hannukankkunen/liveusb"
 set -o verbose
@@ -11,7 +12,7 @@ sudo apt-get -y install git salt-minion
 echo "Retrieving and Applying Settings..."
 echo 'master: 142.93.160.134'|sudo tee /etc/salt/minion
 git clone https://github.com/hannu83/salt/live
-cd live/
+cd salt/live/
 ./highstate.sh
 
 echo "Configuring Live Desktop"

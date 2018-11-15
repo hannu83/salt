@@ -8,18 +8,14 @@
 * e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset –hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
 * f) Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’ löytääksesi uudet asetustiedostot.
 
-<<<<<<< HEAD
 Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni, joka on vuokrattu Digital Oceanin kautta.
-=======
-Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, Asus Z97 Pro Wifi-ac emolevy, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni, joka on vuokrattu Digital Oceanin kautta.
->>>>>>> 317659478a15547a7e55325e347ed19e9e1fb107
 
 ## b) Tämä tehtävä tehdään markdown muodossa ja tieto tallennettiin /srv/salt/ hakemistoon ja sieltä github varastoon.
 
 ## c) /srv/salt/ gittiin.
 
 /srv/salt/ on jo gitissä, joten aloitin poistamalla sen koneelta ja lataamalla sen uudelleen. Ensin kuitenkin otin varmuuskopion toiseen hakemistoon koko salt-kansiosta.
-<<<<<<< HEAD
+
 > $ sudo cp -r /srv/salt/ /home/hannu/salt/
 
 Ja poistin alkuperäisen saltin
@@ -35,7 +31,6 @@ Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi
 
   $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
   $ git config --global user.name "Hannu Harjoittelija"
-=======
 
 >       $ sudo cp -r /srv/salt/ /home/hannu/salt/
 
@@ -53,13 +48,11 @@ Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi
 >       $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
 
 >       $ git config --global user.name "Hannu Harjoittelija"
->>>>>>> 317659478a15547a7e55325e347ed19e9e1fb107
 
 Näihin kannattaa antaa oikea nimi, sillä se tulee näkymään kommenteissa, joita jätät.
 
 Seuraavaksi annoin komennon, joka muistaa ulkoa salasanan tunnin ajan, jottei sitä tarvitse jatkuvasti kirjoittaa.
 
-<<<<<<< HEAD
   $ git config --global credential.helper "cache --timeout=3600"
 
 ## Varaston kloonaaminen virtuaalipalvelimelle.
@@ -72,7 +65,6 @@ Nyt varasto näkyy /srv/salt hakemistossa. Seuraavaksi siirsin tämän tiedoston
 
  $ sudo cp /home/hannu/salt/week3.md /srv/salt/
 
-=======
 >       $ git config --global credential.helper "cache --timeout=3600"
 
 ### Varaston kloonaaminen virtuaalipalvelimelle.
@@ -299,4 +291,3 @@ Ja nyt ajoin uudelleen salt-masterilta fail2ban.
 >  Summary for acer5536
 
 Fail2ban asentui ja käynnisti itsensä uudelleen, jotta asetukset otetaan jail.local tiedostosta. Homma kunnossa!
->>>>>>> 317659478a15547a7e55325e347ed19e9e1fb107

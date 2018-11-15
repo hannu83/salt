@@ -1,5 +1,7 @@
 # Palvelinten hallinta h3
 
+Lähde: [Palvelinten hallinta, Karvinen 2018](http://terokarvinen.com/2018/aikataulu-–-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-–-loppukevat-2018-5p]
+
 * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
 
 * b) MarkDown. Tee tämän tehtävän raportti MarkDownina. Helpointa on tehdä raportti samaan GitHub-varastoon kuin Salt-modulit. Tiedostoon .md-pääte. Tyhjä rivi tekee kappalejaon, risuaita ‘#’ tekee otsikon, sisennys merkitsee koodinpätkän.
@@ -24,13 +26,13 @@ Ja poistin alkuperäisen saltin
  
 Nyt /srv/ hakemisto on tyhjä, joten sinne oli saatava palautettua tiedot. Mikäli GIT ei olisi asennettuna voisi sen asentaa:
 
-  $ sudo apt-get update
-  $ sudo apt-get -y install git
+	  $ sudo apt-get update
+	  $ sudo apt-get -y install git
 
 Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi tunnistaa käyttäjän.
 
-  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
-  $ git config --global user.name "Hannu Harjoittelija"
+	  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
+	  $ git config --global user.name "Hannu Harjoittelija"
 
 >       $ sudo cp -r /srv/salt/ /home/hannu/salt/
 

@@ -18,21 +18,21 @@ Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel 
 
 /srv/salt/ on jo gitissä, joten aloitin poistamalla sen koneelta ja lataamalla sen uudelleen. Ensin kuitenkin otin varmuuskopion toiseen hakemistoon koko salt-kansiosta.
 
-> $ sudo cp -r /srv/salt/ /home/hannu/salt/
+>       $ sudo cp -r /srv/salt/ /home/hannu/salt/
 
 Ja poistin alkuperäisen saltin
 
-> $ sudo rm -r /srv/salt/
+>       $ sudo rm -r /srv/salt/
  
 Nyt /srv/ hakemisto on tyhjä, joten sinne oli saatava palautettua tiedot. Mikäli GIT ei olisi asennettuna voisi sen asentaa:
 
-	  $ sudo apt-get update
-	  $ sudo apt-get -y install git
+>	  $ sudo apt-get update
+>	  $ sudo apt-get -y install git
 
 Asennuksen jälkeen pitää vielä antaa sähköposti ja nimi, jotta palvelu voi tunnistaa käyttäjän.
 
-	  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
-	  $ git config --global user.name "Hannu Harjoittelija"
+>	  $ git config --global user.email "hannuharjoittelija@esimerkki.fi"
+>	  $ git config --global user.name "Hannu Harjoittelija"
 
 >       $ sudo cp -r /srv/salt/ /home/hannu/salt/
 

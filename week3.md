@@ -1,6 +1,6 @@
 # Palvelinten hallinta h3
 
-Lähde: [Palvelinten hallinta, Karvinen 2018](http://terokarvinen.com/2018/aikataulu-–-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-–-loppukevat-2018-5p]
+Lähde: [Palvelinten hallinta, Karvinen 2018](http://terokarvinen.com/2018/aikataulu-–-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-–-loppukevat-2018-5p)
 
 * a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
 

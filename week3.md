@@ -10,7 +10,7 @@ Lähde: [Palvelinten hallinta, Karvinen 2018](http://terokarvinen.com/2018/aikat
 * e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset –hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
 * f) Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’ löytääksesi uudet asetustiedostot.
 
-Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni, joka on vuokrattu Digital Oceanin kautta.
+Tehtävät tehdään omalla Windows 10 x64 pc pöytäkoneellani, jossa on Intel i7-4790K prosessori, 16 gigatavua keskusmuistia, MSI 1080 ti näytönohjain sekä viimeisin Windows päivitys (17134.345). Itse tehtävät hoidetaan putty:n versio 0.67 ssh:n välityksellä virtuaalipalvelimeeni Linux Xubuntu 18.04 LTS, joka on vuokrattu Digital Oceanin kautta.
 
 ## b) Tämä tehtävä tehdään markdown muodossa ja tieto tallennettiin /srv/salt/ hakemistoon ja sieltä github varastoon.
 

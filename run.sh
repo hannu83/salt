@@ -11,6 +11,8 @@ sudo apt-get -y install git salt-minion
 
 echo "Retrieving and Applying Settings..."
 echo 'master: 142.93.160.134'|sudo tee /etc/salt/minion
+sudo systemctl restart salt-minion
+
 git clone https://github.com/hannu83/salt
 cd salt/
 ./highstate.sh

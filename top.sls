@@ -1,5 +1,5 @@
 base:
   '*':
     - ufw
-    - sshd
-    - fail2ban
+    - lamp
+    - maria

@@ -2,3 +2,4 @@ base:
   '*':
     - ufw
     - lamp
+    - maria

@@ -3,6 +3,8 @@ install_lamp:
     - pkgs:
       - apache2
       - libapache2-mod-php 
+      - mariadb-client
+      - mariadb-server
 
 /var/www/html/index.php:
   file:

@@ -1,4 +1,4 @@
-install-mysql:
+install-mariadb:
   pkg.installed:
     - mariadb-server
     - mariadb-client

@@ -1,3 +1,4 @@
 install-mysql:
   pkg.installed:
-    - mysql-server
+    - mariadb-server
+    - mariadb-client

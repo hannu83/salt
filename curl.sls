@@ -1,0 +1,5 @@
+curl:
+  pkg: 
+    - installed
+
+

@@ -67,7 +67,7 @@ bantime  = 60m
 findtime  = 10m
 
 # "maxretry" is the number of failures before a host get banned.
-maxretry = 5
+maxretry = 3
 
 # "backend" specifies the backend used to get files modification.
 # Available options are "pyinotify", "gamin", "polling", "systemd" and "auto".

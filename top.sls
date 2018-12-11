@@ -2,7 +2,7 @@ base:
   '*':
     - sshd
     - fail2ban
-    - apache
+    - LAMP
     - curl
     - ufw
     - maria

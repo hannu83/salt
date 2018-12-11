@@ -5,3 +5,4 @@ base:
     - apache
     - curl
     - ufw
+    - maria

@@ -3,14 +3,8 @@ install_lamp:
     - pkgs:
       - apache2
       - libapache2-mod-php 
-<<<<<<< HEAD
       - php-mysql
-      - mariadb-server
-      - mariadb-client
-=======
-      - mariadb-client
-      - mariadb-server
->>>>>>> 55a1a1ed4472d68cf5a64b66e1a869ae8f583dd7
+      - maria
 
 /var/www/html/index.php:
   file:
@@ -24,9 +18,4 @@ install_lamp:
     - absent
     - require:
       - pkg: install_lamp
-
-/tmp/createuser.sql:
-  file.managed:
-    - mode: 600
-    - source: salt://maria/createuser.sql
 

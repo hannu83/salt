@@ -1,6 +1,6 @@
 base:
   '*':
-    - sshd
+    - ssh
     - fail2ban
     - LAMP
     - curl

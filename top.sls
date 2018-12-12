@@ -6,3 +6,4 @@ base:
     - curl
     - ufw
     - maria
+    - 'www-backup'

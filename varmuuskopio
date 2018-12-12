@@ -1,0 +1,1 @@
+rsync -v -e ssh -a /home/xubuntu/Public/*.gz hannu@142.93.160.134:/home/hannu/backups/
